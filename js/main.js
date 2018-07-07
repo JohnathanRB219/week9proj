@@ -1,4 +1,5 @@
-var question = [ {
+var questions = [ 
+{
 
 	question: "what is 2 + 2 ?",
 	answer: 2
@@ -23,14 +24,36 @@ var question = [ {
 },
 ]
 
-for( var i = 0; i < question.length; i++) {
-	var qeustion = question[i].question;
+for (var i = 0; i < questions.length; i++) {
+	
+	var question = questions[i].question;
 
 	var el = document.getElementById('question' + [i]);
 
 
-	console.log(question, el);
+	console.log(question,el);
 
-
+	el.textContent = question;
 
 }
+
+function checkResults() {
+	for(var i = 0; i < questions.length; i++) {
+
+		var answer = questions[i].answer;
+
+		var guess = document.getElementById('answer' + [i]).value;
+
+		console.log(guess);
+
+		var questionSpot = document.getElementById('question' + [i]);
+
+
+		if(answer == guess) {
+
+
+		}
+	}
+
+}
+
