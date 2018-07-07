@@ -2,7 +2,7 @@ var questions = [
 {
 
 	question: "what is 2 + 2 ?",
-	answer: 2
+	answer: 4
 },
 {
 	question: "what is the square root of 81 ?",
@@ -38,6 +38,14 @@ for (var i = 0; i < questions.length; i++) {
 }
 
 function checkResults() {
+
+	var correct = 0;
+
+
+	var incorrect = 0;
+
+
+
 	for(var i = 0; i < questions.length; i++) {
 
 		var answer = questions[i].answer;
@@ -51,9 +59,21 @@ function checkResults() {
 
 		if(answer == guess) {
 
+			questionSpot.idName = 'correct';
 
-		}
-	}
+			correct++;
+
+		} else{
+
+			questionSpot.idName = 'incorrect';
+
+			incorrect++;
+		};
+	};
+
+
+	document.getElementById('correct').textContent = correct;
+	document.getElementById('incorrect').textContent = incorrect;
 
 }
 
